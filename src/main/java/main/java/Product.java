@@ -6,6 +6,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+/**
+ * Product class for json demonstration. Object holds information about a product such as the items name, category and more. 
+ * @author Jacob Labrec
+ */
 public class Product {
 
     public String item,description,category,unitMeasure;

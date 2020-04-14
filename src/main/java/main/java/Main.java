@@ -9,16 +9,27 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+/**
+ * Main class for demonstrating json deserialization from a json file
+ * into java objects and serialization to a json file from those objects. 
+ * @author Jacob Labrec
+ * 
+ */
 public class Main{
 	public static void main(String[] args) {
 
+		//List for storing deserialized objects. 
 		LinkedList<Shopper> shoppers= new LinkedList<>();
-		System.out.println("This worked\nGreat Job Jake");
+		
 		JSONParser parser = new JSONParser();
 		try{
+			//Open the file and read in the main json array
 			FileReader reader = new FileReader("shoppingLists.json");
 			Object obj = parser.parse(reader);
 			JSONArray shoppingList = (JSONArray)obj;
+
+			//Iterate over the array elements(jsonobjects) and 
+			//create shoppers from them.
 			for(int i =0; i < shoppingList.size(); i++) {
 				JSONObject object = (JSONObject)shoppingList.get(i);
 				System.out.println(object);
@@ -26,7 +37,7 @@ public class Main{
 				shoppers.add(shopper);
 			}
 			
-
+			//Print some of the read in information. 
 			for(Shopper shopper : shoppers) {
 				System.out.println("Shopper Name: "+shopper.username);
 				System.out.println("Products in list: ");
