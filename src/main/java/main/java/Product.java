@@ -27,4 +27,22 @@ public class Product {
 
     }
 
+    public String toJsonString(){
+            
+        return this.toJsonObject().toString();
+    }
+
+    public JSONObject toJsonObject(){
+        JSONObject obj = new JSONObject();
+        obj.put("item",item);
+        obj.put("description",description);
+        obj.put("category",category);
+        obj.put("units of measurement",unitMeasure);
+        obj.put("number of units",numUnits);
+        obj.put("quantity",quantity);
+        obj.put("checkbox",checkbox);
+        return obj;
+    }
+
+
 }

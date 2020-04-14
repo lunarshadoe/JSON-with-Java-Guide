@@ -30,4 +30,20 @@ public class Shopper {
         username = (String)object.get("username");
     }
 
+
+    public String toJsonString(){
+        return this.toJsonObject().toString();
+    }
+
+    public JSONObject toJsonObject(){
+        JSONObject obj = new JSONObject();
+        obj.put("username",username);
+        JSONArray arr = new JSONArray();
+        for(Product product : list) {
+            arr.add(product.toJsonObject());
+        }
+        obj.put("shopping list",arr);
+        return obj;
+    }
+
 }

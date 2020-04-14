@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
+import java.io.FileWriter;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -32,7 +33,7 @@ public class Main{
 			//create shoppers from them.
 			for(int i =0; i < shoppingList.size(); i++) {
 				JSONObject object = (JSONObject)shoppingList.get(i);
-				System.out.println(object);
+				//System.out.println(object);
 				Shopper shopper = new Shopper(object);
 				shoppers.add(shopper);
 			}
@@ -45,7 +46,21 @@ public class Main{
 					System.out.format("\t%s\n",product.item);
 				}
 			}
+
+			//System.out.println("\n\n"+shoppers.get(0).toJsonString());
 			
+
+			//export to file
+			JSONArray outArr = new JSONArray();
+			
+			for(Shopper shopper: shoppers) {
+				outArr.add(shopper.toJsonObject());
+			}
+
+			FileWriter file = new FileWriter("shoppingLists.json");
+			file.write(outArr.toJSONString());
+			file.flush();
+
 
 		}catch(Exception e) {
 			e.printStackTrace();
