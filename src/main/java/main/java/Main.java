@@ -47,7 +47,7 @@ public class Main{
 				}
 			}
 
-			//System.out.println("\n\n"+shoppers.get(0).toJsonString());
+			
 			
 
 			//Exporting shopper list to json file: 
