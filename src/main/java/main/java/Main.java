@@ -50,13 +50,14 @@ public class Main{
 			//System.out.println("\n\n"+shoppers.get(0).toJsonString());
 			
 
-			//export to file
-			JSONArray outArr = new JSONArray();
+			//Exporting shopper list to json file: 
+			JSONArray outArr = new JSONArray();//Create outer json array 
 			
-			for(Shopper shopper: shoppers) {
+			for(Shopper shopper: shoppers) {//add shopper json objects to this array
 				outArr.add(shopper.toJsonObject());
 			}
 
+			//Write array to file
 			FileWriter file = new FileWriter("shoppingLists.json");
 			file.write(outArr.toJSONString());
 			file.flush();

@@ -31,10 +31,18 @@ public class Shopper {
     }
 
 
+    /**
+     * Returns a json string representation of this object. 
+     * @return
+     */
     public String toJsonString(){
         return this.toJsonObject().toString();
     }
 
+    /**
+     * Returns a JSONObject representation of this object. 
+     * @return
+     */
     public JSONObject toJsonObject(){
         JSONObject obj = new JSONObject();
         obj.put("username",username);
