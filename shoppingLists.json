@@ -6,7 +6,7 @@
 				"category":"dairy",
 				"number of units":1,
 				"units of measurement":"lb.s",
-				"quantity":"1",
+				"quantity":1,
 				"checkbox":false
 			},
 			{	"item":"milk",
@@ -31,14 +31,14 @@
 	},
 	{
 		"username":"Spiderman",
-		"shoppinglist":[
+		"shopping list":[
 			{
 				"item":"bread",
 				"description":"organic non-gmo grassfed gluten free white bread",
 				"category":"non-existant",
 				"number of units":1,
 				"units of measurement":"lb.s",
-				"quantity":"1",
+				"quantity":1,
 				"checkbox":false
 			},
 			{	"item":"Nutella",
